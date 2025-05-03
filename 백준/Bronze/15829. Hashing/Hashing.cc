@@ -1,19 +1,21 @@
-#include <iostream>
-#include <cmath>
+#include<iostream>
+#include<string>
+#include<cmath>
 using namespace std;
 
-int main() {
-	int N,sum=0;
-	cin >> N;
-	char *a = new char [N];
-	for (int i = 0;i < N;i++) {
-		cin >> a[i];
-	}
-	for (int i = 0;i < N;i++)
+string s;
+int main(void)
+{
+	int l;
+	long long m = 1234567891;
+	long long r = 1;
+	long long sum = 0;
+	cin >> l;
+	cin >> s;
+	for (int i = 0; i < l; i++)
 	{
-		sum += (a[i] - 96) * pow(31, i);
+		sum += ((long(s[i]) - 96) * r)%m;
+		r = (r*31)%m;
 	}
-	cout << sum;
-
-	return 0;
+	cout << sum % m;
 }
